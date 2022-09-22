@@ -1,4 +1,4 @@
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plot
 
 from testType import TestType
 
@@ -13,19 +13,20 @@ class PlotFunc:
         self.res = []
 
 
-def draw(test_type, x, func_res):
-    ax1 = plt.figure(figsize=(12, 7)).add_subplot(111)
+def draw_graph_with_func(test_type, x, func_res):
+    ax1 = plot.figure(figsize=(12, 7)).add_subplot(111)
 
     for func in func_res:
-        plt.plot(x, func.res, func.color,
-                 alpha=0.7, label=func.name, mew=2, ms=10)
+        plot.plot(x, func.res, func.color,
+                  alpha=0.7, label=func.name, mew=2, ms=10)
 
-    plt.legend()
+    plot.legend()
     if test_type is TestType.Time:
         ax1.set_title(u'Time By Substring Length')
-        plt.ylabel(u'Time [ms]', fontsize=12)
+        plot.ylabel(u'Time', fontsize=12)
     else:
         ax1.set_title(u'Memory By Substring Length')
-        plt.xlabel(u'Needle length [2^n]', fontsize=12)
-    plt.grid(True)
-    plt.show()
+        plot.xlabel(u'Substring length', fontsize=12)
+
+    plot.grid(True)
+    plot.show()

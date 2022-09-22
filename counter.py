@@ -1,5 +1,5 @@
 import time
-from tracemalloc import get_tracemalloc_memory
+import tracemalloc
 from testType import TestType
 
 
@@ -11,10 +11,11 @@ def count_time(string, substring, function):
 
 
 def count_memory(string, substring, function):
-    start_memory = get_tracemalloc_memory()
+    start_memory = tracemalloc.get_tracemalloc_memory()
+    tracemalloc.start()
     function(substring, string)
-    end_memory = get_tracemalloc_memory() - start_memory
-    return end_memory
+    end_memory = tracemalloc.get_tracemalloc_memory() - start_memory
+    return abs(end_memory)
 
 
 def test(function, string, substring, test_type : TestType):
