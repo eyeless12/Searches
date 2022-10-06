@@ -36,8 +36,8 @@ def main():
     test_type = parse_enter(sys.argv[1])
     methods = {'Standard': graphbuilder.PlotFunc('Standard', 'c'),
                'Rabin': graphbuilder.PlotFunc('Rabin', 'm'),
-               'KMP': graphbuilder.PlotFunc("KMP", 'y'),
-               'Aho': graphbuilder.PlotFunc('Aho', 'k')}
+               'Aho': graphbuilder.PlotFunc('Aho', 'b'),
+               'KMP': graphbuilder.PlotFunc("KMP", 'y')}
 
     start_point = 7
     end_point = 21

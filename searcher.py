@@ -28,7 +28,7 @@ def create_table(string):
     return table
 
 
-def aho_karasik(substring, string):
+def aho_korasik(substring, string):
     root = aho_create_statemachine([substring])
     node = root
 
@@ -44,22 +44,22 @@ def aho_karasik(substring, string):
     return -1
 
 
-# @staticmethod #Алгоритм Бауера Мура
-# def bauer_moore(substring, string):
-#     table = Searcher.create_table(substring)
-#     len_hay = len(string)
-#     len_needle = shift = needle_pos = ptr = len(substring)
-#     while shift <= len_hay and needle_pos > 0:
-#         if substring[needle_pos - 1] == string[ptr - 1]:
-#             needle_pos -= 1
-#             ptr -= 1
-#         else:
-#             shift += table[ord(string[ptr - 1])]
-#             ptr = shift
-#             needle_pos = len_needle
-#     if needle_pos <= 0:
-#         return ptr
-#     return -1
+def bauer_moore(substring, string):
+    table = create_table(substring)
+    len_hay = len(string)
+    len_needle = shift = needle_pos = ptr = len(substring)
+    while shift <= len_hay and needle_pos > 0:
+        if substring[needle_pos - 1] == string[ptr - 1]:
+            needle_pos -= 1
+            ptr -= 1
+        else:
+            shift += table[ord(string[ptr - 1])]
+            ptr = shift
+            needle_pos = len_needle
+    if needle_pos <= 0:
+        return ptr
+    return -1
+
 
 def prefix(text):
     len_text = len(text)
@@ -117,4 +117,4 @@ def rabin_karp(substring, string):
 algos = {'Standard': simple_search,
          'Rabin': rabin_karp,
          'KMP': kmp,
-         'Aho': aho_karasik}
+         'Aho': aho_korasik}
