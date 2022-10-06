@@ -117,4 +117,5 @@ def rabin_karp(substring, string):
 algos = {'Standard': simple_search,
          'Rabin': rabin_karp,
          'KMP': kmp,
-         'Aho': aho_korasik}
+         'Aho': aho_korasik,
+         'Bauer': bauer_moore}
