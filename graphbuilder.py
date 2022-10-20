@@ -4,10 +4,10 @@ from testType import TestType
 
 
 class PlotFunc:
-    def __init__(self, name, color):
+    def __init__(self, name, color, results: list):
         self.name = name
         self.color = color
-        self.res = []
+        self.res = results
 
 
 def draw_graph_with_func(test_type, x, func_res):
