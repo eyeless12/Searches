@@ -4,9 +4,6 @@ from testType import TestType
 
 
 class PlotFunc:
-    name = ''
-    color = ''
-
     def __init__(self, name, color):
         self.name = name
         self.color = color

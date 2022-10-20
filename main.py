@@ -1,7 +1,7 @@
 import random as r
 import sys
 
-from searcher import *
+from searcher import Searcher
 import counter
 import graphbuilder
 import text_generator
@@ -36,7 +36,7 @@ def main():
     test_type = parse_enter(sys.argv[1])
     methods = {'Standard': graphbuilder.PlotFunc('Standard', 'c'),
                'Rabin': graphbuilder.PlotFunc('Rabin', 'm'),
-               #'Aho': graphbuilder.PlotFunc('Aho', 'b'),
+               'Aho': graphbuilder.PlotFunc('Aho', 'b'),
                'Bauer': graphbuilder.PlotFunc('Bauer', 'g'),
                'KMP': graphbuilder.PlotFunc("KMP", 'y')}
 
@@ -47,7 +47,7 @@ def main():
         (string, substring) = text_generator.get_text(r.randint(2 ** (i - 7),
                                                                 2 ** (i - 3)), 10000)
         for (key, value) in methods.items():
-            value.res.append(counter.test(algos[key],
+            value.res.append(counter.test(Searcher.algos[key],
                                           string, substring, test_type))
         x.append(i)
 
