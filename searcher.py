@@ -1,4 +1,4 @@
-from aho import *
+from aho import AhoNode, aho_create_statemachine
 
 
 class Searcher:
