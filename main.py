@@ -5,6 +5,7 @@ from searcher import Searcher
 import counter
 import graphbuilder
 import text_generator
+import gc
 from testType import TestType
 
 
@@ -36,6 +37,7 @@ def init_plot_func(results: dict):
 
 
 def main():
+    gc.disable()
     x = []
 
     if len(sys.argv) == 1:
