@@ -46,7 +46,7 @@ def main():
     test_type = parse_enter(sys.argv[1])
     methods_results = {'Standard': [],
                        'Rabin': [],
-                       'Aho': [],
+                       #'Aho': [],
                        'Bauer': [],
                        'KMP': []}
 
